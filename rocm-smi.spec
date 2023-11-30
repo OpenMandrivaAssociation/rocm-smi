@@ -34,7 +34,7 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 ROCm System Management Interface Library development files
  
 %prep
-%autosetup -n %{upstreamname}-rocm-%{version} -p1
+%autosetup -n %{upstreamname}-%{version} -p1
  
 # Don't change default C FLAGS and CXX FLAGS:
 sed -i '/CMAKE_C.*_FLAGS/d' CMakeLists.txt
