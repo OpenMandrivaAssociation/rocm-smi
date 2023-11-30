@@ -1,11 +1,11 @@
 %global rocm_release 5.7
 %global rocm_patch 1
 %global rocm_version %{rocm_release}.%{rocm_patch}
-%global upstreamname rocm_smi_lib
+%global upstreamname rocm_smi_lib-rocm
  
 Name:       rocm-smi
 Version:    %{rocm_version}
-Release:    1%{?dist}
+Release:    1
 Summary:    ROCm System Management Interface Library
  
 License:    NCSA and MIT and BSD
@@ -13,15 +13,12 @@ URL:        https://github.com/RadeonOpenCompute/%{upstreamname}
 Source0:    %{url}/archive/refs/tags/rocm-%{version}.tar.gz#/%{upstreamname}-%{version}.tar.gz
  
 # SMI requires the AMDGPU kernel module, which only builds on:
-ExclusiveArch:  x86_64 aarch64 ppc64le
+#ExclusiveArch:  x86_64 aarch64 ppc64le
  
 BuildRequires:  cmake
-# Fedora 38 has doxygen 1.9.6
-%if 0%{?fedora} > 38
-BuildRequires:  doxygen >= 1.9.7
-BuildRequires:  doxygen-latex >= 1.9.7
-%endif
-BuildRequires:  gcc-c++
+BuildRequires:  doxygen
+#BuildRequires:  doxygen-latex
+
  
 %description
 The ROCm System Management Interface Library, or ROCm SMI library, is part of
@@ -44,9 +41,10 @@ sed -i '/CMAKE_C.*_FLAGS/d' CMakeLists.txt
  
 %build
 %cmake -DFILE_REORG_BACKWARD_COMPATIBILITY=OFF
-%cmake_build
+%make_build
+
 %install
-%cmake_install
+%make_install -C build
 # For Fedora < 38, the README is not installed if doxygen is disabled:
 install -D -m 644 README.md %{buildroot}%{_docdir}/rocm_smi/README.md
  
