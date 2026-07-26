@@ -10,6 +10,7 @@ Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-7.14/roc
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
 BuildRequires:	ninja
+BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	python3
 
 ExclusiveArch:	%{x86_64} %{aarch64}
