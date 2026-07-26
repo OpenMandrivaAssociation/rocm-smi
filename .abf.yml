@@ -1,2 +1,3 @@
 sources:
+  rocm-smi-lib-7.14.0.tar.gz: 24916229fa201b175fa75a2981f902e166be063e
   rocm_smi_lib-rocm-5.7.1.tar.gz: 35fb3f6598cb81c62a636dc358a0dfdd3db1e90d
