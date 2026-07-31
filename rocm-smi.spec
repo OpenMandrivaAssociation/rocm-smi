@@ -1,6 +1,6 @@
 Name:		rocm-smi
 Version:	7.14.0
-Release:	1
+Release:	2
 Summary:	ROCm System Management Interface Library
 License:	NCSA AND MIT AND BSD
 Group:		System/Libraries
@@ -12,8 +12,6 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	pkgconfig(libdrm)
 BuildRequires:	python3
-
-ExclusiveArch:	%{x86_64} %{aarch64}
 
 %description
 The ROCm System Management Interface Library (librocm_smi64) provides a
