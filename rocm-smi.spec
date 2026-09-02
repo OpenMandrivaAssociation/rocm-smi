@@ -1,11 +1,11 @@
 Name:		rocm-smi
-Version:	7.14.0
-Release:	2
+Version:	10.0.0
+Release:	1
 Summary:	ROCm System Management Interface Library
 License:	NCSA AND MIT AND BSD
 Group:		System/Libraries
 URL:		https://github.com/ROCm/rocm_smi_lib
-Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-7.14/rocm-smi-lib.tar.gz#/rocm-smi-lib-%{version}.tar.gz
+Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/rocm-smi-lib.tar.gz#/rocm-smi-lib-%{version}.tar.gz
 
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
